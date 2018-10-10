@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ftp_server.iml" filepath="$PROJECT_DIR$/ftp_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ftp_server-api/ftp_server-api.iml" filepath="$PROJECT_DIR$/ftp_server-api/ftp_server-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ftp_server-service/ftp_server-service.iml" filepath="$PROJECT_DIR$/ftp_server-service/ftp_server-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ftp_server-web/ftp_server-web.iml" filepath="$PROJECT_DIR$/ftp_server-web/ftp_server-web.iml" />
+    </modules>
+  </component>
+</project>
