@@ -1,63 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration scan="true" scanPeriod="60 seconds">
-    <property name="LOG_HOME" value="../ftp_server/service" />
-    <appender name="FILE"
-              class="ch.qos.logback.core.rolling.RollingFileAppender">
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="logback.xsd">
+
+    <property name="logPath" value="/root/ftp_server/log"/>
+    <!-- property name="logPath" value="E:/DeepW_Dev/AIServer/log" /-->
+    <property name="patt" value="%d{yyyMMdd HH:mm:ss.SSS} [%-1thread] [%-5level] %logger - %msg%n"/>
+    <!--   <property name="patt" value="%d{yyyMMdd HH:mm:ss.SSS} [%-1thread] [%-5level] %logger{1}.%M %L - %msg%n" /> -->
+    <property name="pattBlank" value="%msg%n"/>
+
+    <!--logger配置-->
+    <logger name="com.ideasfly" additivity="true" level="DEBUG"/>
+
+    <appender name="fileLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logPath}/ftp_server_service.log</file>
         <encoder>
-            <pattern>
-                [ %-5level] [%date{yyyy-MM-dd HH:mm:ss.SSS}] %logger{96} [%line] [%thread]- %msg%n
-            </pattern>
-            <charset>UTF-8</charset> <!-- 此处设置字符集 -->
+            <pattern>${patt}</pattern>
         </encoder>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- rollover daily 配置日志所生成的目录以及生成文件名的规则 -->
-            <fileNamePattern>${LOG_HOME}/log_%d{yyyyMMdd}.%i.log</fileNamePattern>
-            <timeBasedFileNamingAndTriggeringPolicy
-                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>64 MB</maxFileSize>
-            </timeBasedFileNamingAndTriggeringPolicy>
-            <maxHistory>30</maxHistory>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>${logPath}/ftp_server_service%d{yyyyMMdd}_%i.zip</fileNamePattern>
+            <!-- each file should be at most 50MB -->
+            <maxFileSize>50MB</maxFileSize>
+            <!-- keep 7 days worth of history -->
+            <maxHistory>7</maxHistory>
+            <!--  keep files at most 1GB -->
+            <totalSizeCap>1GB</totalSizeCap>
         </rollingPolicy>
-
-        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>INFO</level>
-        </filter>
-        <!-- Safely log to the same file from multiple JVMs. Degrades performance! -->
-        <prudent>false</prudent>
     </appender>
 
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <appender name="std" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>
-                [ %-5level] [%date{yyyy-MM-dd HH:mm:ss.SSS}] %logger{96} [%line] [%thread]- %msg%n
-            </pattern>
-            <charset>UTF-8</charset> <!-- 此处设置字符集 -->
+            <pattern>${patt}</pattern>
         </encoder>
-        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>INFO</level>
-        </filter>
     </appender>
 
-    <!-- 邮件监控异常 -->
-    <!--    <appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender">
-            <smtpHost>smtp.163.com</smtpHost>
-            <username>cairs-2w010@163.com</username>
-            <password>zxc1s2dsa46</password>
-            <from>cairs-2010@163.com</from>
-            <to>403411d876@qq.com</to>
-            <subject>【web-ext-Error】: %logger</subject>
-         <layout class="ch.qos.logback.classic.html.HTMLLayout"/>
-            <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-                <level>ERROR</level>
-            </filter>
-        </appender>-->
-
-    <!-- Enable FILE and STDOUT appenders for all log messages. By default,
-        only log at level INFO and above. -->
     <root level="INFO">
-        <appender-ref ref="STDOUT" />
-        <!--<appender-ref ref="FILE" />-->
-        <!--<appender-ref ref="EMAIL" />-->
+        <!-- 控制台输出 -->
+        <appender-ref ref="std"/>
+        <!-- 文件输出 -->
+        <!--<appender-ref ref="fileLog"/>-->
     </root>
 
 </configuration>
