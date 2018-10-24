@@ -6,7 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ftp_server" />
         <module name="ftp_server-api" />
         <module name="ftp_server-service" />
         <module name="ftp_server-web" />
