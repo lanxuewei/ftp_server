@@ -6,6 +6,8 @@ package com.ideasfly.dao.dubbo;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.ideasfly.api.DubboTestRemote;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author lanxuewei Create in 2018/10/22 10:02
@@ -13,6 +15,8 @@ import com.ideasfly.api.DubboTestRemote;
  */
 @Service
 public class DubboTest implements DubboTestRemote {
+
+    private static final Logger Logger = LoggerFactory.getLogger(DubboTest.class);
 
     @Override
     public String helloWord() {
