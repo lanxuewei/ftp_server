@@ -3,13 +3,15 @@ package com.ideasfly.common.base;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
-import com.ideasfly.common.model.Page;
-import com.ideasfly.common.model.UtilPage;
-import com.ideasfly.common.model.UtilReflection;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.CollectionUtils;
+
+import com.ideasfly.common.model.Page;
+import com.ideasfly.common.model.UtilPage;
+import com.ideasfly.common.model.UtilReflection;
 
 
 /**
@@ -108,7 +110,7 @@ public class BaseDao<D extends BaseMyMapper<T>, T>{
 				Object obj = entityClazz.newInstance();
 				if (UtilReflection.setFieldValue(obj, fieldName, value)) {
 					List<T> list = this.mapper.select((T) obj);
-					if (list != null && list.size() > 0) {
+					if (!CollectionUtils.isEmpty(list)) {
 						return list.get(0);
 					}
 				}
