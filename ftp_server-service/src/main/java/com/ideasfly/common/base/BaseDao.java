@@ -18,7 +18,8 @@ import com.ideasfly.common.model.UtilReflection;
  * 通用BaseDao
  */
 public class BaseDao<D extends BaseMyMapper<T>, T>{
-	private Logger log = LoggerFactory.getLogger(BaseDao.class);
+
+	private Logger logger = LoggerFactory.getLogger(BaseDao.class);
 	
 	@Autowired
 	protected D mapper;
@@ -117,7 +118,7 @@ public class BaseDao<D extends BaseMyMapper<T>, T>{
 			}
 			return null;
 		} catch (Exception e) {
-			log.error("根据实体的字段名和字段值查询异常：{}", e);
+			logger.error("根据实体的字段名和字段值查询异常：{}", e);
 			return null;
 		}
 	}
@@ -142,7 +143,7 @@ public class BaseDao<D extends BaseMyMapper<T>, T>{
 				}
 			}
 		} catch (Exception e) {
-			log.error("根据实体的字段名和字段值查询List异常：{}", e);
+			logger.error("根据实体的字段名和字段值查询List异常：{}", e);
 		}
 		return null;
 	}
