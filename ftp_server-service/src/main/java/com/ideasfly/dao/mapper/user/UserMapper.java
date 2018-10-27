@@ -4,12 +4,12 @@
  */
 package com.ideasfly.dao.mapper.user;
 
+import com.ideasfly.dao.base.BaseMyMapper;
 import com.ideasfly.dao.entity.User;
-import tk.mybatis.mapper.common.BaseMapper;
 
 /**
  * @author lanxuewei Create in 2018/10/26 20:43
  * Description: UserMapper
  */
-public interface UserMapper extends BaseMapper<User> {
+public interface UserMapper extends BaseMyMapper<User> {
 }
