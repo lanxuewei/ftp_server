@@ -1,17 +1,16 @@
 package com.ideasfly.dao.base;
 
 import java.lang.reflect.ParameterizedType;
-import java.util.ArrayList;
 import java.util.List;
 
-import com.ideasfly.common.model.Page;
-import com.ideasfly.common.model.UtilPage;
 import com.ideasfly.common.model.UtilReflection;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.ideasfly.common.model.Page;
+import com.ideasfly.common.model.UtilPage;
 import org.springframework.util.CollectionUtils;
 
 
@@ -19,7 +18,7 @@ import org.springframework.util.CollectionUtils;
  * @author lanxuewei Create in 2018/10/26 20:43
  * Description: 通用BaseDao
  */
-public class BaseDao<D extends BaseMyMapper<T>, T>{
+public class BaseDao<D extends BaseMyMapper<T>, T> {
 
 	private Logger logger = LoggerFactory.getLogger(BaseDao.class);
 	
@@ -100,8 +99,7 @@ public class BaseDao<D extends BaseMyMapper<T>, T>{
 	/**
 	 * 根据实体的字段名和字段值查询
 	 * 
-	 * @param clazz 实体Class
-	 * @param name  字段名
+	 * @param fieldName 字段名
 	 * @param value 字段值
 	 * @return
 	 */
@@ -130,11 +128,10 @@ public class BaseDao<D extends BaseMyMapper<T>, T>{
 	/**
 	 * 根据实体的字段名和字段值查询
 	 * 
-	 * @param clazz 实体Class
-	 * @param name  字段名
+	 * @param fieldName 字段名
 	 * @param value 字段值
 	 * @return
-	 */
+	 *//*
 	@SuppressWarnings("unchecked")
 	public List<T> queryByField(String fieldName, Object value) {
 		try {
@@ -150,7 +147,7 @@ public class BaseDao<D extends BaseMyMapper<T>, T>{
 			logger.error("根据实体的字段名和字段值查询List异常：{}", e);
 		}
 		return new ArrayList<>();
-	}
+	}*/
 	
 
 	/**
