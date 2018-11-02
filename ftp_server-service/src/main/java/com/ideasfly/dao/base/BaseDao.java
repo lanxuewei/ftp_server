@@ -1,6 +1,7 @@
 package com.ideasfly.dao.base;
 
 import java.lang.reflect.ParameterizedType;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.ideasfly.common.model.UtilReflection;
@@ -29,7 +30,7 @@ public class BaseDao<D extends BaseMyMapper<T>, T> {
 	 * 数据库插入 实体
 	 * 支持Oracle序列,UUID,类似Mysql的INDENTITY自动增长(自动回写)
 	 * 优先使用传入的参数值,参数值空时,才会使用序列、UUID,自动增长
-	 * @param record
+	 * @param record record
 	 * @return 插入成功返回  1
 	 */
 	public int insert(T record) {
@@ -131,7 +132,7 @@ public class BaseDao<D extends BaseMyMapper<T>, T> {
 	 * @param fieldName 字段名
 	 * @param value 字段值
 	 * @return
-	 *//*
+	 */
 	@SuppressWarnings("unchecked")
 	public List<T> queryByField(String fieldName, Object value) {
 		try {
@@ -147,7 +148,7 @@ public class BaseDao<D extends BaseMyMapper<T>, T> {
 			logger.error("根据实体的字段名和字段值查询List异常：{}", e);
 		}
 		return new ArrayList<>();
-	}*/
+	}
 	
 
 	/**
