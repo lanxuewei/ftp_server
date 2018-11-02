@@ -21,6 +21,13 @@ public class UtilReflection {
     private static final String CGLIB_CLASS_SEPARATOR = "$$";
 
     /**
+     * 私有构造器
+     */
+    private UtilReflection() {
+
+    }
+
+    /**
      * 调用Getter方法.
      * 支持多级，如：对象名.对象名.方法
      */

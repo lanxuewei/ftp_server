@@ -2,10 +2,19 @@ package com.ideasfly.common.model;
 
 import java.util.List;
 
+import org.springframework.util.CollectionUtils;
+
 /**
  * 对一个list集合进行分页操作
  */
 public class UtilPage {
+
+	/**
+	 * 私有构造器
+	 */
+	private UtilPage() {
+
+	}
     /**
      * @param list      数据
      * @param pageIndex 页码
@@ -15,7 +24,7 @@ public class UtilPage {
     public static <T> List<T> getPageList(List<T> list, int pageIndex, int pageSize) {
 
         List<T> subList = null;
-        if (list != null && list.size() > 0) {
+        if (!CollectionUtils.isEmpty(list)) {
             int total = list.size();
             int pageCount = 0;
             int m = total % pageSize;
