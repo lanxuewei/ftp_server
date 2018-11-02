@@ -1,4 +1,4 @@
-package com.ideasfly.common.model;
+package com.ideasfly.common.utils;
 
 import java.util.List;
 

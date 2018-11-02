@@ -10,12 +10,12 @@ import java.util.UUID;
  * @author lanxuewei Create in 2018/11/1 19:20
  * Description: String Utils
  */
-public class StringUtils {
+public class UtilString {
 
     /**
      * 私有构造器
      */
-    private StringUtils() {
+    private UtilString() {
     }
 
     /**

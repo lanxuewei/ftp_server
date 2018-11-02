@@ -12,7 +12,7 @@ import com.github.pagehelper.PageInfo;
  */
 public class Page<T> implements Serializable{
 
-	private static final long serialVersionUID = 2834324973741353859L;
+	private static final long serialVersionUID = 5784877030657381945L;
 
 	private static final int PAGE_INDEX = 1;
 

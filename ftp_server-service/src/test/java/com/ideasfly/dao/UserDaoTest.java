@@ -4,6 +4,7 @@
  */
 package com.ideasfly.dao;
 
+import com.ideasfly.common.utils.UtilString;
 import org.junit.Assert;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -11,7 +12,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.ideasfly.TestBase;
-import com.ideasfly.common.utils.StringUtils;
 import com.ideasfly.dao.dbservice.user.UserDao;
 import com.ideasfly.dao.entity.User;
 import org.springframework.transaction.annotation.Transactional;
@@ -47,11 +47,11 @@ public class UserDaoTest extends TestBase {
      */
     private User getUser() {
         User user = new User();
-        user.setUserName(StringUtils.getUUID());
-        user.setPassword(StringUtils.getUUID());
-        user.setImg(StringUtils.getUUID());
-        user.setDes(StringUtils.getUUID());
-        user.setRealName(StringUtils.getUUID());
+        user.setUserName(UtilString.getUUID());
+        user.setPassword(UtilString.getUUID());
+        user.setImg(UtilString.getUUID());
+        user.setDes(UtilString.getUUID());
+        user.setRealName(UtilString.getUUID());
         return user;
     }
 }

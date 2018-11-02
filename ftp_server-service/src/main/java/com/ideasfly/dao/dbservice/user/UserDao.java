@@ -5,7 +5,6 @@
 package com.ideasfly.dao.dbservice.user;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import com.ideasfly.dao.base.BaseDao;
 import com.ideasfly.dao.entity.User;

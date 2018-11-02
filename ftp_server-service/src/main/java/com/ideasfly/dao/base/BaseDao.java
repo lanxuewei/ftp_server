@@ -4,14 +4,14 @@ import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ideasfly.common.model.UtilReflection;
+import com.ideasfly.common.utils.UtilReflection;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.ideasfly.common.model.Page;
-import com.ideasfly.common.model.UtilPage;
+import com.ideasfly.common.utils.UtilPage;
 import org.springframework.util.CollectionUtils;
 
 
