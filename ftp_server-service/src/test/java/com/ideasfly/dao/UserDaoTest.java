@@ -4,6 +4,7 @@
  */
 package com.ideasfly.dao;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,10 +35,10 @@ public class UserDaoTest extends TestBase {
     public void insertTest() {
         User user = getUser();
         int num = userDao.insert(user);
-        logger.info("num = {}", num);
+        Assert.assertEquals(1, num);
 
         User userFromDb = userDao.queryById(user.getId());
-        logger.info("userFromDb = {}", userFromDb);
+        Assert.assertEquals(user.getUserName(), userFromDb.getUserName());
     }
 
     /**
@@ -48,9 +49,9 @@ public class UserDaoTest extends TestBase {
         User user = new User();
         user.setUserName(StringUtils.getUUID());
         user.setPassword(StringUtils.getUUID());
-        user.setImg("D:\\logo.png");
-        user.setDes("这个人太懒了，什么都没有说。");
-        user.setRealName("lanxuewei");
+        user.setImg(StringUtils.getUUID());
+        user.setDes(StringUtils.getUUID());
+        user.setRealName(StringUtils.getUUID());
         return user;
     }
 }
