@@ -13,6 +13,14 @@
     </parent>
 
     <dependencies>
+        <!-- test -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>5.0.7.RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+
         <!-- ftp_server-api -->
         <dependency>
             <groupId>com.ideasfly</groupId>
