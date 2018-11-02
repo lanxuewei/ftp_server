@@ -14,9 +14,9 @@ public class Page<T> implements Serializable{
 
 	private static final long serialVersionUID = 2834324973741353859L;
 
-	private final static int PAGE_INDEX = 1;
+	private static final int PAGE_INDEX = 1;
 
-	private final static int PAGE_SIZE = 10;
+	private static final int PAGE_SIZE = 10;
 
 	/**
 	 * 当前页码默认1
