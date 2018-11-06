@@ -5,6 +5,7 @@
 package com.ideasfly.dao;
 
 import com.ideasfly.common.utils.UtilString;
+import com.ideasfly.utils.UtilEntity;
 import org.junit.Assert;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -33,7 +34,7 @@ public class UserDaoTest extends TestBase {
     @Test
     @Transactional
     public void insertTest() {
-        User user = getUser();
+        User user = UtilEntity.getUser();
         int num = userDao.insert(user);
         Assert.assertEquals(1, num);
 
@@ -41,17 +42,4 @@ public class UserDaoTest extends TestBase {
         Assert.assertEquals(user.getUserName(), userFromDb.getUserName());
     }
 
-    /**
-     * 获得用户
-     * @return user
-     */
-    private User getUser() {
-        User user = new User();
-        user.setUserName(UtilString.getUUID());
-        user.setPassword(UtilString.getUUID());
-        user.setImg(UtilString.getUUID());
-        user.setDes(UtilString.getUUID());
-        user.setRealName(UtilString.getUUID());
-        return user;
-    }
 }
