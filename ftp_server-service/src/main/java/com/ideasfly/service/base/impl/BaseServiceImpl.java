@@ -89,7 +89,7 @@ public class BaseServiceImpl<D extends BaseMyMapper<T>, T> implements BaseServic
 	@SuppressWarnings("unchecked")
 	public List<T> queryByField(String fieldName, Object value) {
 		try {
-			if(StringUtils.isNotBlank(fieldName) && value!=null){
+			if(StringUtils.isNotBlank(fieldName) && value != null){
 				ParameterizedType pt = (ParameterizedType) getClass().getGenericSuperclass();
 				Class<T> entityClazz = (Class<T>) pt.getActualTypeArguments()[1];
 				Object obj = entityClazz.newInstance();

@@ -13,5 +13,4 @@ import com.ideasfly.service.base.BaseService;
  */
 public interface UserService extends BaseService<User> {
 
-
 }
