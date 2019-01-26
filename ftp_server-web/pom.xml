@@ -18,5 +18,12 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.39</version>
         </dependency>
+        <!-- ftp_server-api -->
+        <dependency>
+            <groupId>com.ideasfly</groupId>
+            <artifactId>ftp_server-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
+
 </project>
